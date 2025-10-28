@@ -14,8 +14,8 @@ class TestPalindromes:
     def test_dennis_and_edna(self, func) -> None:
         assert func("Dennis and Edna sinned!") == {"dennisandednasinned"}
 
-    def test_napoleon(self, func) -> None:
-        assert func("Able was I, 'ere I saw Elba :-(") == {""}
+    def test_napoleons_lament(self, func) -> None:
+        assert func("Able was I, 'ere I saw Elba :-(") == {"ablewasiereisawelba"}
 
     def test_wooloomooloo(self, func) -> None:
         # See https://en.wikipedia.org/wiki/Woolloomooloo
