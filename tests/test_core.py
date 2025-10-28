@@ -18,7 +18,7 @@ class TestPalindromes:
         # See https://en.wikipedia.org/wiki/Woolloomooloo
         assert func("Wooloomooloo") == {"ooloomooloo"}
 
-    def test_a_kook_around_noon(self, func) -> None:
+    def test_a_kook_in_the_afternoon(self, func) -> None:
         assert func("A saw a kook this afternoon") == {"kook", "noon"}
 
     def test_two_kooks_around_noon(self, func) -> None:
