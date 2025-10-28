@@ -6,6 +6,7 @@ Write a function that take a string argument and finds the longest palindrome
 in it (ignore non-alphabetic chars and case). If there are multiple
 equally-long longest palindromes, return them all. E.g.:
 
+    "" -> {""}
     "tillbest" -> {"ll"}
     "leonie meiners" -> {"niemein"}
     "jackson emanuel" -> {"a", "c", "e", "j", "k", "l", "m", "n", "o", "s", "u"}
