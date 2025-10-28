@@ -18,6 +18,9 @@ class TestPalindromes:
         # See https://en.wikipedia.org/wiki/Woolloomooloo
         assert func("Wooloomooloo") == {"ooloomooloo"}
 
+    def test_equal_length_palindromes(self, func) -> None:
+        assert func("jack ca son os") == {"ackca", "sonos"}
+
     def test_a_kook_in_the_afternoon(self, func) -> None:
         assert func("A saw a kook this afternoon") == {"kook", "noon"}
 
@@ -38,6 +41,3 @@ class TestPalindromes:
 
     def test_jackson_emanuel(self, func) -> None:
         assert func("Jackson Emanuel") == set("acejklmnosu")
-
-    def test_two_equal_palindromes(self, func) -> None:
-        assert func("jack ca son os") == {"ackca", "sonos"}
