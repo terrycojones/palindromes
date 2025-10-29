@@ -25,13 +25,13 @@ class TestPalindromes:
         assert func("jack ca son os") == {"ackca", "sonos"}
 
     def test_a_kook_in_the_afternoon(self, func) -> None:
-        assert func("A saw a kook this afternoon") == {"kook", "noon"}
+        assert func("I saw a kook this afternoon") == {"kook", "noon"}
 
     def test_two_kooks_around_noon(self, func) -> None:
-        assert func("A saw a kook before noon, then another kook") == {"kook", "noon"}
+        assert func("I saw a kook before noon, then another kook") == {"kook", "noon"}
 
     def test_a_kookaburra(self, func) -> None:
-        assert func("A saw a kookaburra!") == {"akooka"}
+        assert func("I saw a kookaburra!") == {"akooka"}
 
     def test_leonie_meiners(self, func) -> None:
         assert func("Leonie Meiners") == {"niemein"}
