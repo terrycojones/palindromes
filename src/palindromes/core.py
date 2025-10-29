@@ -45,7 +45,7 @@ def p2(s: str) -> set[str]:
     max_length = 0
     palindromes = {""}
 
-    for index in np.arange(0, len(s), 0.5):
+    for index in np.arange(0.0, s_len - 0.5, 0.5):
         left = floor(index)
         right = ceil(index)
         radius = -1

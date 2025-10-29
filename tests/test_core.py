@@ -8,6 +8,9 @@ class TestPalindromes:
     def test_empty(self, func) -> None:
         assert func("") == {""}
 
+    def test_abc(self, func) -> None:
+        assert func("abc") == {"a", "b", "c"}
+
     def test_single_letter(self, func) -> None:
         assert func("a") == {"a"}
 
