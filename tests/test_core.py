@@ -1,10 +1,11 @@
 import pytest
 
+from palindromes.djp import djp_1
 from palindromes.nikolai import nz_1, nz_2
 from palindromes.terry import tj_1, tj_2, tj_3
 
 
-@pytest.mark.parametrize("func", [nz_1, nz_2, tj_1, tj_2, tj_3])
+@pytest.mark.parametrize("func", [djp_1, nz_1, nz_2, tj_1, tj_2, tj_3])
 class TestPalindromes:
     def test_empty(self, func) -> None:
         assert func("") == {""}
