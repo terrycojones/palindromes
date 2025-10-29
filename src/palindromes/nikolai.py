@@ -21,8 +21,8 @@ def nz_2(s):
     for offset in range(length - 1):
         if s[offset] == s[offset + 1]:
             seeds[offset] = s[offset : offset + 2]
-    pals = {}
-    max_len = 1
+    pals = {"": ""}
+    max_len = 0
     for offset, seed in seeds.items():
         i = 1
         even = len(seed) - 1
