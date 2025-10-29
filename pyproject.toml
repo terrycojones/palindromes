@@ -11,6 +11,10 @@ requires-python = ">=3.14"
 dependencies = [
     "numpy>=2.3.4",
 ]
+authors = [
+    { name = "Terry C. Jones", email = "terence.jones@charite.de" },
+    { name = "Nikolai Zaki" },
+]
 
 [dependency-groups]
 dev = [

@@ -1,5 +1,5 @@
 import argparse
-from palindromes.core import p1
+from palindromes.terry import tj_3
 
 
 def main() -> None:
@@ -13,7 +13,7 @@ def main() -> None:
 
     args = parser.parse_args()
 
-    palindromes: set[str] = p1("".join(args.text))
+    palindromes: set[str] = tj_3("".join(args.text))
     n = len(palindromes)
     length = len(list(palindromes)[0])
 
