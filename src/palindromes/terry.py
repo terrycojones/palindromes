@@ -1,5 +1,6 @@
 import numpy as np
 from math import ceil, floor
+from typing import Iterable
 
 
 def clean(s: str) -> str:
@@ -79,3 +80,33 @@ def tj_3(s: str) -> set[str]:
             return palindromes
 
     return {""}
+
+
+def tj_4(s: str) -> set[str]:
+    s = clean(s)
+    s_len = len(s)
+
+    def substrings() -> Iterable[str]:
+        for length in range(s_len, -1, -1):
+            for start in range(0, s_len - length + 1):
+                yield s[start: start + length]
+
+    def is_palindrome(p: str) -> bool:
+        if len(p) < 2:
+            return True
+        return p[0] == p[-1] and is_palindrome(p[1:-1])
+
+    def palindromes():
+        length = -1
+        for substring in substrings():
+            if is_palindrome(substring):
+                substring_len = len(substring)
+                if length == -1:
+                    length = substring_len
+                    yield substring
+                elif substring_len == length:
+                    yield substring
+                else:
+                    break
+
+    return set(palindromes())
