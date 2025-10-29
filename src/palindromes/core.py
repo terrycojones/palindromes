@@ -63,3 +63,19 @@ def p2(s: str) -> set[str]:
                 palindromes.add(palindrome)
             
     return palindromes
+
+
+def p3(s: str) -> set[str]:
+    s = clean(s)
+    s_len = len(s)
+
+    for length in range(s_len, 0, -1):
+        palindromes = set()
+        for start in range(0, s_len - length + 1):
+            region = s[start: start + length]
+            if region == region[::-1]:
+                palindromes.add(region)
+        if palindromes:
+            return palindromes
+
+    return {""}
