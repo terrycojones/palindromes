@@ -94,14 +94,13 @@ def tj_4(s: str) -> set[str]:
 
     def palindromes(s: str) -> Iterable[str]:
         length = -1
-        for substring in substrings(s):
-            if is_palindrome(substring):
-                if length == -1:
-                    length = len(substring)
-                    yield substring
-                elif len(substring) == length:
-                    yield substring
-                else:
-                    break
+        for substring in filter(is_palindrome, substrings(s)):
+            if length == -1:
+                length = len(substring)
+                yield substring
+            elif len(substring) == length:
+                yield substring
+            else:
+                break
 
     return set(palindromes(clean(s)))
