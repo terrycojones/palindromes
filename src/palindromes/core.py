@@ -1,5 +1,13 @@
+import numpy as np
+from math import ceil, floor
+
+
+def clean(s: str) -> str:
+    return "".join(filter(str.isalpha, s.lower()))
+
+
 def p1(s: str) -> set[str]:
-    s = "".join(filter(str.isalpha, s.lower()))
+    s = clean(s)
     s_len = len(s)
     max_len = 0
     palindromes = {""}
@@ -28,5 +36,33 @@ def p1(s: str) -> set[str]:
 
 
 def p2(s: str) -> set[str]:
-    # s = s.replace(" ", "")
-    return p1(s)
+    s = clean(s)
+    print(f"checking {s}")
+    s_len = len(s)
+
+    def check_extremes(left: int, right: int) -> bool:
+        return left >= 0 and right < s_len and s[left] == s[right]
+
+    max_length = 0
+    palindromes = {""}
+
+    for index in np.arange(0, len(s), 0.5):
+        left = floor(index)
+        right = ceil(index)
+        radius = -1
+        while True:
+            if not check_extremes(left - (radius + 1), right + radius + 1):
+                break
+            else:
+                radius += 1
+
+        if radius > -1:
+            length = (radius << 1) + 2 - (left == right)
+            palindrome = s[left - radius: right + radius + 1]
+            if length > max_length:
+                max_length = length
+                palindromes = {palindrome}
+            elif length == max_length:
+                palindromes.add(palindrome)
+            
+    return palindromes
