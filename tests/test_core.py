@@ -53,3 +53,6 @@ class TestPalindromes:
 
     def test_jackson_emanuel(self, func) -> None:
         assert func("Jackson Emanuel") == set("acejklmnosu")
+
+    def test_jenny_meier(self, func) -> None:
+        assert func("Jenny Meier") == {"eie"}
