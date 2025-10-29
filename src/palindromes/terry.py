@@ -96,11 +96,10 @@ def tj_4(s: str) -> set[str]:
         length = -1
         for substring in substrings(s):
             if is_palindrome(substring):
-                substring_len = len(substring)
                 if length == -1:
-                    length = substring_len
+                    length = len(substring)
                     yield substring
-                elif substring_len == length:
+                elif len(substring) == length:
                     yield substring
                 else:
                     break
