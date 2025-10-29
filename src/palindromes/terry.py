@@ -83,20 +83,18 @@ def tj_3(s: str) -> set[str]:
 
 
 def tj_4(s: str) -> set[str]:
-    s = clean(s)
-    s_len = len(s)
 
-    def substrings() -> Iterable[str]:
-        for length in range(s_len, -1, -1):
-            for start in range(0, s_len - length + 1):
+    def substrings(s) -> Iterable[str]:
+        for length in range(len(s), -1, -1):
+            for start in range(0, len(s) - length + 1):
                 yield s[start: start + length]
 
     def is_palindrome(p: str) -> bool:
         return len(p) < 2 or p[0] == p[-1] and is_palindrome(p[1:-1])
 
-    def palindromes():
+    def palindromes(s):
         length = -1
-        for substring in substrings():
+        for substring in substrings(s):
             if is_palindrome(substring):
                 substring_len = len(substring)
                 if length == -1:
@@ -107,4 +105,4 @@ def tj_4(s: str) -> set[str]:
                 else:
                     break
 
-    return set(palindromes())
+    return set(palindromes(clean(s)))
