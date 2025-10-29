@@ -92,9 +92,7 @@ def tj_4(s: str) -> set[str]:
                 yield s[start: start + length]
 
     def is_palindrome(p: str) -> bool:
-        if len(p) < 2:
-            return True
-        return p[0] == p[-1] and is_palindrome(p[1:-1])
+        return len(p) < 2 or p[0] == p[-1] and is_palindrome(p[1:-1])
 
     def palindromes():
         length = -1
