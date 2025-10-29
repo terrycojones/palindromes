@@ -16,3 +16,6 @@ dependencies = [
 dev = [
     "pytest>=8.4.2",
 ]
+
+[project.scripts]
+palindromes = "palindromes.cli:main"
