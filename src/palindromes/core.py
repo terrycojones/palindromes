@@ -37,7 +37,6 @@ def p1(s: str) -> set[str]:
 
 def p2(s: str) -> set[str]:
     s = clean(s)
-    print(f"checking {s}")
     s_len = len(s)
 
     def check_extremes(left: int, right: int) -> bool:
