@@ -1,9 +1,9 @@
 import pytest
 
-from palindromes.core import p1, p2, p3
+from palindromes.core import p1, p2, p3, p4, p5
 
 
-@pytest.mark.parametrize("func", [p1, p2, p3])
+@pytest.mark.parametrize("func", [p1, p2, p3, p4, p5])
 class TestPalindromes:
     def test_empty(self, func) -> None:
         assert func("") == {""}
