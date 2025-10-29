@@ -8,6 +8,12 @@ class TestPalindromes:
     def test_empty(self, func) -> None:
         assert func("") == {""}
 
+    def test_single_letter(self, func) -> None:
+        assert func("a") == {"a"}
+
+    def test_doubled_letter(self, func) -> None:
+        assert func("aa") == {"aa"}
+
     def test_panama(self, func) -> None:
         assert func("A man, a plan, a canal, Panama!") == {"amanaplanacanalpanama"}
 
