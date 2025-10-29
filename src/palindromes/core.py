@@ -50,9 +50,7 @@ def p2(s: str) -> set[str]:
         right = ceil(index)
         radius = -1
 
-        while True:
-            if not check_extremes(left - (radius + 1), right + radius + 1):
-                break
+        while check_extremes(left - (radius + 1), right + radius + 1):
             radius += 1
 
         if radius > -1:
