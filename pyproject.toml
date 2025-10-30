@@ -14,6 +14,8 @@ dependencies = [
 authors = [
     { name = "Terry C. Jones", email = "terence.jones@charite.de" },
     { name = "Nikolai Zaki" },
+    { name = "David J. Pattinson" },
+    { name = "Sina Tureli" },
 ]
 
 [dependency-groups]
